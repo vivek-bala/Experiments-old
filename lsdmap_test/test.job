@@ -23,7 +23,7 @@ module load -intel +intel/14.0.1.106
 module load python
 
 for i in 1 2; do
-	/usr/local/bin/ibrun -n 64 -o 0 python lsdm.py -f config.ini -c tmpha.gro -n neighbors.nn -w weight.w
+	/usr/local/bin/ibrun -n 64 -o 0 /opt/apps/intel14/mvapich2_2_0/python/2.7.6/lib/python2.7/site-packages/mpi4py/bin/python-mpi lsdm.py -f config.ini -c tmpha.gro -n neighbors.nn -w weight.w
 	wait
 	echo "done"
 done
